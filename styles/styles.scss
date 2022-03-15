@@ -1,0 +1,90 @@
+//Pixels to rem
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem; 
+  @return $remValue;
+}
+
+//Colors
+$redColor: hsl(0, 100%, 74%) ;
+$greenColor: hsl(154, 59%, 51%);
+$violetColor: hsl(248, 32%, 49%);
+$whiteTextColor: hsl(204, 43%, 93%);
+$darkBlueColor: hsl(249, 10%, 26%);
+$grayishBlueColor: hsl(246, 25%, 77%);
+
+//Fonts
+$base-font-size: 16px;
+$font-primary: 'Poppins', sans-serif;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-semi-bold: 600;
+$weight-bold: 700;
+
+//Radius
+$radius: toRem(16);
+
+//Breakpoint
+$desktopLayout: toRem(375);
+
+
+/* global styles */
+html {
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: $font-primary;
+  font-weight: $weight-normal;
+  background-color: $redColor;
+  line-height: 1.5;
+  font-size: $base-font-size; 
+  padding: toRem(32);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* typography */
+h1 {
+  color: $whiteTextColor;
+}
+.imageWrapper {
+  width: 100%;
+
+}
+.mobileBackground {
+  position: absolute;
+  display: block;
+}
+
+.desktopBackground {
+  display: none;
+}
+
+@media only screen and (min-width: $desktopLayout) {
+  .mobileBackground {
+    display: none;
+  }
+  
+  .desktopBackground {
+    position: absolute;
+    display: block;
+  }
+}

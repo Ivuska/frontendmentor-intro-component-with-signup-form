@@ -1,0 +1,62 @@
+/* global styles */
+html {
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background-color: #ff7a7a;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 2rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* typography */
+h1 {
+  color: #e5eff5;
+}
+
+.imageWrapper {
+  width: 100%;
+}
+
+.mobileBackground {
+  position: absolute;
+  display: block;
+}
+
+.desktopBackground {
+  display: none;
+}
+
+@media only screen and (min-width: 23.4375rem) {
+  .mobileBackground {
+    display: none;
+  }
+
+  .desktopBackground {
+    position: absolute;
+    display: block;
+  }
+}/*# sourceMappingURL=styles.css.map */
