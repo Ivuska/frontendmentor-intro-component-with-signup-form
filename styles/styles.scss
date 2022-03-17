@@ -6,6 +6,7 @@
 
 //Colors
 $redColor: hsl(0, 100%, 74%) ;
+$redShadowColor: hsl(0, 77%, 66%) ;
 $greenColor: hsl(154, 59%, 51%);
 $violetColor: hsl(248, 32%, 49%);
 $whiteTextColor: hsl(204, 43%, 93%);
@@ -50,41 +51,181 @@ body {
   padding: toRem(32);
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 /* typography */
 h1 {
   color: $whiteTextColor;
+  font-weight: $weight-bold;
+  margin: 0;
+  margin:toRem(16) 0;
+
+  @media only screen and (min-width: $desktopLayout) {
+    font-size: $base-font-size*2;
+    line-height: 1;
+    margin-bottom: toRem(16);
+  }
 }
-.imageWrapper {
+
+p {
+  color: $whiteTextColor;
+  font-weight: $weight-normal;
+  padding: 0;
+  margin: 0;
+}
+
+span {
+  font-weight: $weight-semi-bold;
+}
+
+/*layout*/
+
+.isResponsive {
+  display: flex;
+  flex-shrink: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align:center;
+  max-width: toRem(374);
   width: 100%;
 
-}
-.mobileBackground {
-  position: absolute;
-  display: block;
-}
-
-.desktopBackground {
-  display: none;
-}
-
-@media only screen and (min-width: $desktopLayout) {
-  .mobileBackground {
-    display: none;
-  }
-  
-  .desktopBackground {
-    position: absolute;
-    display: block;
+  @media only screen and (min-width: $desktopLayout) {
+    flex-direction: row;
+    align-items: center;
+    max-width: toRem(900);
   }
 }
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: toRem(16) 0;
+  @media only screen and (min-width: $desktopLayout) {
+    text-align: left;
+  }
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: toRem(16) 0;
+  .offer {
+    padding: toRem(16);
+    background-color: $violetColor;
+    border-radius: $radius;
+    width: 90%;
+    box-shadow: 0px 5px 2px $redShadowColor;
+  }
+  .form {
+    margin-top: toRem(32);
+    padding: toRem(32);
+    background-color: $whiteTextColor;
+    border-radius: $radius;
+    width: 90%;
+    box-shadow: 0px 5px 2px $redShadowColor;
+    div {
+      position: relative;
+      margin: toRem(15) 0;
+      i {
+        position: absolute;
+        padding: toRem(12);
+        color: $grayishBlueColor;
+      }
+      .failure-icon {
+        display: block;
+        width: 15px;
+        height: 15px;
+        right: 0;
+        opacity: 0;
+      }
+      .success-icon {
+        color: $greenColor;
+        right: 0;
+        opacity: 0;
+      }
+      .error {
+        color: $redColor;
+        font-size: $base-font-size/2;
+        text-align: right;
+        margin-top: 5px;
+      }
+    }
+    .input {
+      width: 100%;
+      border-radius: toRem(8);
+      height: toRem(40);
+      padding: 0 toRem(35);
+      border: none;
+      font-weight: $weight-bold;
+      color:$darkBlueColor;
+      &:focus,
+      &:focus-visible,
+      &:hover {
+        border: 1px solid $grayishBlueColor;
+      }
+      &.visited {
+        border: 1px solid blue;
+      }
+      &.invalid {
+        border:2px solid hsl(0, 100%, 74%);
+      }
+      &.valid {
+        border:2px solid hsl(154, 59%, 51%);
+      }
+    }
+    .submitFormButton {
+      border: none;
+      background-color: $greenColor;
+      border-radius: toRem(8);
+      width:100%;
+      padding: toRem(8);
+      margin-top: toRem(16);
+      box-shadow: 0px 2px 5px $greenColor;
+      color: $whiteTextColor;
+      font-weight: $weight-bold;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      &:focus,
+      &:focus-visible,
+      &:hover {
+        opacity: 0.8;
+        cursor: grab;
+      }
+    }
+    .terms {
+      color: $grayishBlueColor;
+      font-size: $base-font-size/2;
+      text-align: center;
+      padding: toRem(16);
+      a {
+        text-decoration: none;
+        &:focus,
+        &:focus-visible,
+        &:hover {
+          text-decoration: solid;
+        }
+      }
+      span {
+        color: $redColor;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
