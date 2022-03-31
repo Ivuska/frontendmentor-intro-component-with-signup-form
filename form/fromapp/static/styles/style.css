@@ -169,7 +169,6 @@ span {
 }
 .formContainer .form .submitFormButton:focus, .formContainer .form .submitFormButton:focus-visible, .formContainer .form .submitFormButton:hover {
   opacity: 0.8;
-  cursor: -webkit-grab;
   cursor: grab;
 }
 .formContainer .form .terms {
@@ -182,9 +181,10 @@ span {
   text-decoration: none;
 }
 .formContainer .form .terms a:focus, .formContainer .form .terms a:focus-visible, .formContainer .form .terms a:hover {
-  -webkit-text-decoration: solid;
-          text-decoration: solid;
+  text-decoration: solid;
 }
 .formContainer .form .terms span {
   color: #ff7a7a;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
