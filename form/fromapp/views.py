@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
+from django.conf import settings
 
 from .forms import NameForm
 
@@ -14,7 +15,9 @@ class IndexView(FormView):
   success_url = 'thankyou'
 
   def form_valid(self, form):
-    form.save()
+  # Do not save user data when in production.
+    if settings.DEBUG:
+      form.save()
     return super().form_valid(form)
 
 class ThankYouView(TemplateView):
