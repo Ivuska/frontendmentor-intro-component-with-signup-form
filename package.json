@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass styles/style.scss styles/style.css",
-    "watch-sass": "sass -w styles/style.scss styles/style.css"
+    "watch-sass": "sass -w form/fromapp/static/styles/style.scss form/fromapp/static/styles/style.css"
   },
   "author": "",
   "license": "ISC"
