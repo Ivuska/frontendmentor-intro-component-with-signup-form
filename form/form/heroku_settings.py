@@ -1,5 +1,5 @@
 import os
-from settings import *
+from form.settings import *
 import dj_database_url
 
 ALLOWED_HOSTS = ['frontendmentor-intro-component.herokuapp.com']
