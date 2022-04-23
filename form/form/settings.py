@@ -132,3 +132,18 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, '../fromapp/static')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email settings for testing/debug purposes. Uses django testing server. It will show the message only in console.
+# 'python -m smtpd -n -c DebuggingServer localhost:1025'
+# If you want to really receive the email, run the app locally and use for example some smtp gmail server (you need 
+# to have an account without two phase authentication and have the access for less secure apps turned on).
+# Be aware that this option will work only to 2022-05-30 with Google free accounts because of the update of the
+# Gmail secure policy.
+# https://www.youtube.com/watch?v=xNqnHmXIuzU
+# https://bshoo.medium.com/how-to-send-emails-with-python-django-through-google-smtp-server-for-free-22ea6ea0fb8e
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
