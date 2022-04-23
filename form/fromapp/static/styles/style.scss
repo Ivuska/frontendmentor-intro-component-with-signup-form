@@ -65,6 +65,10 @@ h1 {
   }
 }
 
+h2 {
+  color: $whiteTextColor;
+}
+
 p {
   color: $whiteTextColor;
   font-weight: $weight-normal;
@@ -220,6 +224,18 @@ span {
   }
 
 }
+
+.thankYouTemplatetext {
+  flex-direction: column;
+  align-items: center;
+  text-align:center;
+  .emailAddress {
+    color: $darkBlueColor;
+    font-style: italic;
+  }
+}
+
+
 
 
 

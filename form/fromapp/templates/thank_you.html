@@ -2,35 +2,57 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicon-32x32.png' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      type="text/css"
+      href="{% static 'styles/style.css' %}"
+      rel="stylesheet"
+      media="screen"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn to code from the experienced developers."
+    />
 
+    <title>
+      Iva Fischerova | Frontend Mentor | Intro component with sign up form
+    </title>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-  <link type="text/css" href="{% static 'styles/style.css' %}" rel="stylesheet" media="screen">
-  <script src="{% static 'scripts/app.js' %}" type="text/javascript" defer></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn to code from the experienced developers.">
-
-  <title>Iva Fischerova | Frontend Mentor | Intro component with sign up form</title>
-
-</head>
-
-<body>
-  <main class="isResponsive">
-    <div class="component isResponsive">
-
-      <h1>Your form has been submitted. <br>Please check your inbox for email address verification.</h1>
-
-    </div>
-  </main>
-
-</body>
-
+  <body>
+    <main class="isResponsive">
+      <div class='thankYouTemplatetext'>
+        <!-- https://stackoverflow.com/questions/14925382/display-query-string-values-in-django-templates -->
+        <h1>Hi {{ request.GET.username }}!</h1>
+        <br />
+        <h2>
+          Your form has been submitted. 
+          <br />
+          More info about next steps were sent to
+          <span class='emailAddress'>{{ request.GET.email_address }} </span>.
+        </div>
+        </h2>
+    </main>
+  </body>
 </html>

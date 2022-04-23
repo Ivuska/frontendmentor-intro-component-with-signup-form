@@ -5,7 +5,7 @@ class NameForm(forms.ModelForm):
     class Meta:
         model = User
         fields =['name', 'surname', 'email_address', 'password']
-        #this widget solves only the type of the field not the security!
+        # This widget solves only the type of the field not the security!
         widgets = {
           'password': forms.PasswordInput(),
         }
