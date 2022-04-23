@@ -19,7 +19,7 @@ DEBUG = os.environ.get('DEBUG', None) == 'true'
 # the best way seems to be write smth own. It will separate the command of sending of the emails 
 # from the process of send/receive emails itself. 
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_PORT = os.environ.get(str(EMAIL_PORT))
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT'))
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
